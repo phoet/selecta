@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Geschenkeausloser</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <style type="text/css">
+  .hide {
+    display: none;
+  }
+  body {
+    background-color: #ffde0e;
+  }
+  h1 {
+    font-size: 25px;
+    font-family: Verdana;
+    padding: 31px;
+    color: #8d000b;
+  }
+  li {
+    color: #8d000b;
+    list-style: none;
+  }
+  img {
+    max-width: 200px;
+  }
+  input {
+    margin-left: 40px;
+    cursor: pointer;
+    border-radius: 6px;
+    border-width: 1px;
+    border-color: #8d000b;
+    font-size: 1em;
+    padding: 10px 80px;
+    color: #ffde0e;
+    background-color: #8d000b;
+  }
+  </style>
+</head>
+<body>
+
+<h1>Wer darf ein Geschenk auspacken?</h1>
+
+<p><input type="button" value="LOS!" class="button" /></p>
+
+<ul>
+  <li><h2>Hier erscheint der nächste Gewinner</h2></li>
+  <li class="hide"><img src=Kerstin.png></li>
+  <li class="hide"><img src=Peter.png></li>
+  <li class="hide"><img src=Petra.png></li>
+  <li class="hide"><img src=Yvonne.png></li>
+  <li class="hide"><img src=Carsten.png></li>
+  <li class="hide"><img src=Ria.png></li>
+  <li class="hide"><img src=Kalla.png></li>
+</ul>
+
+<script type="text/javascript">
+  $('input').click(function(event){
+    event.preventDefault();
+
+    $('li').hide();
+    var selected = $('li.hide')[getRandomIndex()];
+    $(selected).show();
+  })
+
+  function getRandomIndex() {
+    return Math.floor(Math.random() * 100) % 7;
+  }
+</script>
+
+</body>
+</html>
