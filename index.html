@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Geschenkeausloser</title>
+  <title>Wer darf ein Geschenk auspacken?</title>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
   <style type="text/css">
@@ -10,12 +10,20 @@
   }
   body {
     background-color: #ffde0e;
+    font-family: Verdana;
+  }
+  input:focus,
+  select:focus,
+  textarea:focus,
+  button:focus {
+      outline: none;
   }
   h1 {
-    font-size: 25px;
-    font-family: Verdana;
     padding: 31px;
     color: #8d000b;
+  }
+  h2 {
+    font-style: italic;
   }
   li {
     color: #8d000b;
@@ -23,6 +31,7 @@
   }
   img {
     max-width: 200px;
+    border: 1px solid #8d000b;
   }
   input {
     margin-left: 40px;
@@ -30,8 +39,7 @@
     border-radius: 6px;
     border-width: 1px;
     border-color: #8d000b;
-    font-size: 1em;
-    padding: 10px 80px;
+    padding: 10px 90px;
     color: #ffde0e;
     background-color: #8d000b;
   }
