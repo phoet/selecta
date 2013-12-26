@@ -63,16 +63,31 @@
 </ul>
 
 <script type="text/javascript">
-  $('input').click(function(event){
+  // wir binden uns an das 'click' event von unserem button
+  $('.button').click(function(event){
+    // standardverhalten des buttons unterdrücken
     event.preventDefault();
 
+    // alle listenelemente verstecken
     $('li').hide();
-    var selected = $('li.hide')[getRandomIndex()];
+
+    // alle listenelemente finden
+    var elements = $('li.hide');
+    // zufallsindex errechnen
+    var randomIndex = getRandomIndex(elements.size());
+    // eins unserer elemente auswählen
+    var selected = elements[randomIndex];
+    // und wieder anzeigen (per jQuery)
     $(selected).show();
   })
 
-  function getRandomIndex() {
-    return Math.floor(Math.random() * 100) % 7;
+  // wir definieren eine funktion um eine
+  // zufällige ganzzahl zwischen 0 und n zu erzeugen
+  function getRandomIndex(n) {
+    // erzeugen einer zufallszahl zwischen 0 und 100
+    var rand = Math.floor(Math.random() * 100);
+    // eingrenzen per modulo berechnung
+    return rand % n;
   }
 </script>
 
